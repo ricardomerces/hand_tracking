@@ -1,1 +1,3 @@
-pip install HandTrackingModule
+## Install
+
+```pip install HandTrackingModule```
