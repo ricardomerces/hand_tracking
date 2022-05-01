@@ -2,17 +2,10 @@ import cv2
 import math
 import osascript
 import numpy as np
-#import paho.mqtt.publish as mqtt
 from HandTrackingModule import FindHands
 
 cap = cv2.VideoCapture(1)
 detector = FindHands()
-
-# with open('ha.json', 'r') as f:
-#   mqtt_auth = json.load(f)
-
-# def mqtt_publish(message):
-#     mqtt.single("cmnd/escritorio/mesa/POWER", payload=message, hostname="homeassistant.local", auth=mqtt_auth)
 
 minVol = 0
 maxVol = 8
