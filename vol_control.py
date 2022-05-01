@@ -25,6 +25,6 @@ while True:
             osascript.run('set Volume ' + str(volume))
             print (x2, volume)
 
-    # cv2.imshow("Image", img)
-    # if cv2.waitKey(1) == ord('q'):
-    #     break
+    cv2.imshow("Image", img)
+    if cv2.waitKey(1) == ord('q'):
+        break
