@@ -10,6 +10,10 @@ detector = FindHands()
 minVol = 0
 maxVol = 8
 
+def volume_control(volume):
+    osascript.run('set Volume ' + str(volume)) #osasccript OSX
+    print(f"Volume: {volume}")
+
 while True:
     succeed, img = cap.read()
     hand1_positions = detector.getPosition(img, range(21), draw=False)
@@ -22,8 +26,7 @@ while True:
         length1 = math.hypot(x2 - x1, y2 - y1)
         if length1 <35:
             volume = np.interp(x2, [600, 900], [maxVol, minVol])
-            osascript.run('set Volume ' + str(volume))
-            print (x2, volume)
+            volume_control(volume)
 
     cv2.imshow("Image", img)
     if cv2.waitKey(1) == ord('q'):
